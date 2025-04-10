@@ -1,0 +1,9 @@
+Sub HighlightDuplicates()
+    Dim rng As Range
+    Set rng = Selection
+    rng.FormatConditions.Delete
+    rng.FormatConditions.AddUniqueValues
+    rng.FormatConditions(rng.FormatConditions.Count).SetFirstPriority
+    rng.FormatConditions(1).DupeUnique = xlDuplicate
+    rng.FormatConditions(1).Interior.Color = RGB(255, 200, 200)
+End Sub
